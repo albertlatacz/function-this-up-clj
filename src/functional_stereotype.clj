@@ -21,6 +21,6 @@
 
     (if (empty? found)
       (throw (IllegalArgumentException. (format "Invalid Stereotype [%s]. Must be one of [%s]"
-                                          stereotype-name (str/join ", " (sort (mapcat allowed-names stereotypes))))))
+                                           stereotype-name (str/join ", " (sort (mapcat allowed-names stereotypes))))))
       (key (first found)))))
 
