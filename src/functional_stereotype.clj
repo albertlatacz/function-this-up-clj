@@ -7,18 +7,17 @@
                   :newzealand ["a person from new zealand", "kiwi"]
                   :preston ["a person from preston", "scally"]
                   :liverpool ["a person from liverpool", "scouser", "thief"]
-                  :manchester ["a person from manchester", "manc", "mancunian", "fighter"]
-                  }
+                  :manchester ["a person from manchester", "manc", "mancunian", "fighter"]}
 
-     allowed-names (fn [entry]
+    allowed-names (fn [entry]
       (cons (name (key entry)) (val entry)))
 
-     find-with-name (fn [name]
+    find-with-name (fn [name]
       (filter
         (fn [x] (some #(.equalsIgnoreCase name %) (allowed-names x)))
         stereotypes))
 
-     found (find-with-name stereotype-name)]
+    found (find-with-name stereotype-name)]
 
     (if (empty? found)
       (throw (IllegalArgumentException. (format "Invalid Stereotype [%s]. Must be one of [%s]"
