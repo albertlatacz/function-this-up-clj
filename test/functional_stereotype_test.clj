@@ -3,18 +3,18 @@
         functional_stereotype))
 
 (deftest value-for-name-should-return-valid-stereotype-when-passed-description
-  (is (= (find-stereotype "a person from new zealand") :newzealand )))
+  (is (= :newzealand (find-stereotype "a person from new zealand"))))
 
 (deftest value-for-name-should-return-valid-stereotype-when-passed-enum-value-itself
-  (is (= (find-stereotype "manchester") :manchester )))
+  (is (= :manchester (find-stereotype "manchester"))))
 
 (deftest value-for-name-should-return-valid-stereotype-when-passed-alternative-name
-  (is (= (find-stereotype "thief") :liverpool )))
+  (is (= :liverpool (find-stereotype "thief"))))
 
 (deftest value-for-name-should-be-case-insensitive
-  (is (= (find-stereotype "scally") :preston ))
-  (is (= (find-stereotype "SCALLY") :preston ))
-  (is (= (find-stereotype "ScAlLy") :preston )))
+  (is (= :preston (find-stereotype "scally")))
+  (is (= :preston (find-stereotype "SCALLY")))
+  (is (= :preston (find-stereotype "ScAlLy"))))
 
 (deftest value-for-name-should-throw-error-when-passed-invalid-string
   (is (thrown-with-msg?
