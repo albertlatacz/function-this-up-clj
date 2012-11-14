@@ -1,5 +1,5 @@
 (ns functional_stereotype
-  (:require [clojure.string :as str]))
+  (:require [clojure.string :as str]) )
 
 (defn find-stereotype [stereotype-name]
   (let
